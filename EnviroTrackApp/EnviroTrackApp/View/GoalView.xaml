@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnviroTrackApp.View.GoalView">
+    <ContentPage.Content>
+        <StackLayout Padding="40" 
+                     VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="CenterAndExpand">
+
+            <Label x:Name="categoryLabel" 
+                   FontSize="16"
+                   Margin="0,0,0,15"/>
+
+            <Label x:Name="actionCodeLabel" 
+                   FontSize="16"
+                   Margin="0,0,0,15"/>
+
+            <Label x:Name="selectedActionLabel" 
+                   FontSize="16"
+                   Margin="0,0,0,15"/>
+
+            <Label x:Name="descriptionLabel" 
+                   FontSize="16"
+                   Margin="0,0,0,15"/>
+
+            <Label x:Name="impactLevelLabel" 
+                   FontSize="16" 
+                   Text="{Binding ImpactLevel}"
+                   Margin="0,0,0,15"/>
+            
+            <Label Text="Frequency"
+                   FontAttributes="Bold"/>
+            
+            <Picker x:Name="frequencyPicker" 
+                    Title="Select Frequency" 
+                    FontSize="16"
+                    Margin="0,0,0,15"
+                    SelectedIndexChanged="OnFrequencyChanged">
+
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Daily</x:String>
+                        <x:String>Weekly</x:String>
+                        <x:String>Monthly</x:String>
+                        <x:String>Yearly</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            
+            <Label Text="Frequency Action"
+                   FontAttributes="Bold"/>
+            
+            <Picker x:Name="frequencyActionPicker" 
+                    Title="Select Frequency Action"
+                    FontSize="16"
+                    Margin="0,0,0,15">
+                <!-- The items for frequency action will be dynamically populated based on the selected frequency -->
+            </Picker>
+            
+            <Button Text="Save Goal" 
+                    Clicked="OnSaveClicked"
+                    TextColor="White"
+                    BackgroundColor="#78AF02"
+                    CornerRadius="10" 
+                    HorizontalOptions="FillAndExpand"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

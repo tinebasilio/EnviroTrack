@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnviroTrackApp.View.ProfilePage"
+             Title="More">
+    <ContentPage.Content>
+        
+        <StackLayout Spacing="10" 
+                     Padding="20">
+         
+            <Frame CornerRadius="10" 
+                   BackgroundColor="#F0F0F0">
+                <StackLayout Padding="10">
+                    <Label Text="Profile"
+                           TextColor="#333333"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"/>
+                    
+                    <BoxView Color="#CCCCCC" 
+                             HeightRequest="1" />
+                    <Label x:Name="ProfileLabel"
+                           TextColor="#32620E"
+                           Text="View Profile"
+                           FontSize="16">
+                        
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnProfileClicked" />
+                        </Label.GestureRecognizers>
+                        
+                    </Label>
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="10" HasShadow="True" BackgroundColor="#F0F0F0">
+                <StackLayout Padding="10">
+                    <Label Text="About EnviroTrack"
+                           TextColor="#333333"
+                           FontSize="20"
+                           HorizontalOptions="StartAndExpand"/>
+                    
+                    <BoxView Color="#CCCCCC" 
+                             HeightRequest="1"/>
+                    
+                    <Label x:Name="AboutLabel"
+                           TextColor="#32620E"
+                           Text="Learn More"
+                           FontSize="16">
+                        
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnAboutClicked" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

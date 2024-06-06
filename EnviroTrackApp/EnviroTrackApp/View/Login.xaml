@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnviroTrackApp.View.Login">
+    <Grid>
+        <RelativeLayout>
+            <Image Source="LoginBackground.png"
+                   Aspect="AspectFill"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}"/>
+        </RelativeLayout>
+        <StackLayout Spacing="10" 
+                     Padding="50"
+                     VerticalOptions="Center">
+            
+            <Entry x:Name="txtUsername" 
+                   Placeholder="Username" 
+                   TextColor="Black" 
+                   PlaceholderColor="Gray"/>
+            
+            <Entry x:Name="txtPassword" 
+                   IsPassword="True" 
+                   Placeholder="Password" 
+                   TextColor="Black"
+                   PlaceholderColor="Gray"/>
+
+            <Button Text="Login" 
+                    TextColor="White" 
+                    BackgroundColor="#78AF02" 
+                    CornerRadius="10" 
+                    HorizontalOptions="FillAndExpand"                        
+                    Clicked ="btnLogin" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

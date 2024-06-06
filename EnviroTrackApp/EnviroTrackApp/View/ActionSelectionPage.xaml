@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnviroTrackApp.View.ActionSelectionPage"
+             Title="Browse">
+    <ContentPage.Content>
+        <StackLayout Padding="25,10" VerticalOptions="Center">
+            <Label Text="Browse Actions" 
+                   FontSize="24" 
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Start" 
+                   Margin="0,5,0,5"/>
+            <Label Text="Choose an action, every action counts!" Margin="0,0,0,20"/>
+            
+            <ListView x:Name="actionsListView" 
+                      ItemSelected="OnActionSelected"
+                      ItemsSource="{Binding ListDetails}"
+                      HasUnevenRows="True">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            
+                            <Grid Padding="4" Margin="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame Grid.Row="0" 
+                                       Grid.Column="0" 
+                                       Grid.ColumnSpan="2"
+                                       IsClippedToBounds="True"
+                                       Padding="5"
+                                       BackgroundColor="Transparent">
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <BoxView VerticalOptions="Center" 
+                                                 HeightRequest="90" 
+                                                 WidthRequest="15"/>
+                                        <Image Source="{Binding ActionIcon}" 
+                                               HeightRequest="45"
+                                               WidthRequest="45"
+                                               HorizontalOptions="Center" 
+                                               VerticalOptions="Center"/>
+                                        <Label Text="{Binding ActionName}" 
+                                               FontSize="14"
+                                               HorizontalOptions="Center"
+                                               VerticalOptions="Center"
+                                               Padding="15"/>
+                                    </StackLayout>
+
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:EnviroTrackApp.View"
+            x:Class="EnviroTrackApp.View.MainPage"
+            BarBackgroundColor="#FFFFFF"
+            BarTextColor="Black"
+            SelectedTabColor="#78AF02"
+            NavigationPage.HasNavigationBar="False"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Home" 
+                        IconImageSource="home.png">
+            <x:Arguments>
+                <local:DashboardView />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="Browse" 
+                        IconImageSource="browse.png">
+            <x:Arguments>
+                <local:ActionSelectionPage />
+            </x:Arguments>
+        </NavigationPage>
+
+        <NavigationPage Title="More" 
+                        IconImageSource="bars.png">
+            <x:Arguments>
+                <local:ProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>
